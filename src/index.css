@@ -2,41 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Aspra Design System - Gold & Black Gradient Palette
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Background and surface colors */
+    --background: 0 0% 2%;
+    --foreground: 45 30% 95%;
+    
+    /* Card and surface elements */
+    --card: 0 0% 4%;
+    --card-foreground: 45 25% 90%;
+    
+    /* Popover elements */
+    --popover: 0 0% 3%;
+    --popover-foreground: 45 25% 90%;
+    
+    /* Primary gold colors */
+    --primary: 45 100% 60%;
+    --primary-foreground: 0 0% 5%;
+    --primary-glow: 45 100% 70%;
+    
+    /* Secondary colors */
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 45 20% 85%;
+    
+    /* Muted colors */
+    --muted: 0 0% 10%;
+    --muted-foreground: 45 10% 65%;
+    
+    /* Accent colors */
+    --accent: 45 80% 55%;
+    --accent-foreground: 0 0% 5%;
+    
+    /* Destructive colors */
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Border and input */
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 45 100% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-surface: linear-gradient(135deg, hsl(var(--card)), hsl(0 0% 6%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 1%), hsl(45 50% 8%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 50%), hsl(35 100% 60%));
+    
+    /* Glassmorphism */
+    --glass-bg: hsla(0, 0%, 10%, 0.4);
+    --glass-border: hsla(45, 50%, 60%, 0.2);
+    --glass-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.3);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsla(45, 100%, 60%, 0.3);
+    --shadow-card: 0 10px 30px hsla(0, 0%, 0%, 0.5);
+    
+    /* Radius and spacing */
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +126,36 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+  
+  /* Custom utility classes */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
