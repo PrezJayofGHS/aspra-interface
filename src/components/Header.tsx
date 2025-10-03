@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { name: "Features", href: "#features" },
   { name: "How it Works", href: "#how-it-works" },
   { name: "Pricing", href: "#pricing" },
+  { name: "Profiles", href: "/profile" },
   { name: "About", href: "#about" },
 ];
 
@@ -18,9 +20,11 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Aspra
-            </h1>
+            <Link to="/">
+              <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                Aspra
+              </h1>
+            </Link>
           </div>
           
           {/* Desktop Navigation */}
